@@ -1,0 +1,12 @@
+.Lettergrid {
+  display: grid;
+  grid-template-columns: 2rem 2rem 2rem 2rem;
+  grid-gap: 0.4rem;
+}
+.Lettergrid-letter {
+  border: 1px solid grey;
+  display: block;
+  width: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
