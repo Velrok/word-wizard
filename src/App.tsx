@@ -42,17 +42,34 @@ const Lettergrid: FC<{ letters: string[]; highlighted: string[] }> = ({
 
 // TODO restrict or highlight letters that are not in the random_letters list
 const WordSmith: FC<{
+  letters: string[];
   onChange: (arg0: string) => void;
-  onReturn: (arg0: string) => void;
-}> = ({ onChange, onReturn }) => (
+  onReturn: (arg0: string) => Boolean;
+}> = ({ onChange, onReturn, letters }) => (
   <div className="WordSmith">
     <input
       placeholder="type here"
-      onChange={(e) => {
-        // console.log(e.target.value);
-        onChange(e.target.value);
+      onChange={(e) => onChange(e.currentTarget.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          if (onReturn(e.currentTarget.value)) {
+            e.currentTarget.value = '';
+          }
+          return true;
+        } else if (e.key >= 'a' && e.key <= 'z') {
+          // Note: this is ugly, because it mutes the taken field as a side
+          // effect
+          let taken = e.currentTarget.value.split('');
+          let available = letters.filter((l) => !drop_item_mut(taken, l));
+
+          if (available.includes(e.key)) {
+            return true;
+          } else {
+            e.preventDefault();
+            return false;
+          }
+        }
       }}
-      onKeyDown={(e) => e.key === 'Enter' && onReturn(e.currentTarget.value)}
       tabIndex={100}
     />
     <button>⏎</button>
@@ -69,9 +86,14 @@ const WordTreasure: FC<{ words: string[] }> = ({ words }) => (
   </div>
 );
 
+const Score: FC<{ score: number }> = ({ score }) => (
+  <div className="Score">Score: {score}</div>
+);
+
 function App() {
   const [currWord, setCurrWord] = useState('');
   const [letters, setLetters] = useState<string[]>([]);
+  const [treasureList, setTreasureList] = useState<string[]>([]);
 
   useEffect(() => {
     const random_letters: string[] = [];
@@ -89,6 +111,8 @@ function App() {
   // TODO fancy styling
   // TODO  - grey out (highlight) types letters
 
+  let score = treasureList.reduce((score, word) => score + word.length, 0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -96,13 +120,25 @@ function App() {
       </header>
       <Lettergrid letters={letters} highlighted={currWord.split('')} />
       <WordSmith
+        letters={letters}
         onChange={(s) => {
           console.log('onChange: ', s);
           setCurrWord(s);
         }}
-        onReturn={(s) => console.log('onReturn: ', s)}
+        onReturn={(s) => {
+          let spellchecked = s.includes('e');
+          if (spellchecked) {
+            let uniq = new Set([...treasureList, s]);
+            setTreasureList(Array.from(uniq).sort());
+            setCurrWord('');
+            return true;
+          } else {
+            return false;
+          }
+        }}
       />
-      <WordTreasure words={['mine', 'all']} />
+      <Score score={score} />
+      <WordTreasure words={treasureList} />
     </div>
   );
 }
