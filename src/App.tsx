@@ -94,7 +94,7 @@ function App() {
       <header className="App-header">
         <h1>Word Finder</h1>
       </header>
-      <Lettergrid letters={letters} highlighted={['e']} />
+      <Lettergrid letters={letters} highlighted={currWord.split('')} />
       <WordSmith
         onChange={(s) => {
           console.log('onChange: ', s);
