@@ -10,3 +10,7 @@
   line-height: 2rem;
   text-align: center;
 }
+
+.Lettergrid-letter-highlighted {
+  background-color: green;
+}
