@@ -3,6 +3,7 @@ import './App.css';
 import './Lettergrid.css';
 import './WordSmith.css';
 import './WordTreasure.css';
+import './Score.css';
 import { pick_random_letter_en } from './util';
 import { Typo } from 'typo-js-ts';
 
@@ -72,7 +73,9 @@ const WordSmith: FC<{
       }}
       tabIndex={100}
     />
-    <button>⏎</button>
+    {
+      // <button>⏎</button>
+    }
   </div>
 );
 
@@ -119,14 +122,17 @@ function App() {
       .catch(console.log);
   }, []);
 
-  // TODO display word scores
   let score = treasureList.reduce((score, word) => score + word.length, 0);
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Word Finder</h1>
+        <h1>Word Wizard</h1>
       </header>
+      <p>
+        Conjure as many british english words as possible from this set of
+        letters.
+      </p>
       <Lettergrid letters={letters} highlighted={currWord.split('')} />
       <WordSmith
         letters={letters}
