@@ -20,6 +20,9 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "rules" : {
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}]
+  },
   "include": [
     "src"
   ]
