@@ -15,3 +15,5 @@ Try to construct as many words as you can from a set of 16 letters.
 - [ ] visual feedback for miss spelled words
 - [ ] make enter button work
 - [ ] make letter clickable for mobile
+- [ ] better scoring function
+- [ ] ignore on and two letter words (mention that in description)
