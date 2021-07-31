@@ -4,6 +4,7 @@ import './Lettergrid.css';
 import './WordSmith.css';
 import './WordTreasure.css';
 import { pick_random_letter_en } from './util';
+import { Typo } from 'typo-js-ts';
 
 const drop_item_mut: <T>(array: Array<T>, item: T) => Boolean = (
   array,
@@ -98,10 +99,25 @@ function App() {
   useEffect(() => {
     const random_letters: string[] = [];
 
+    console.log('loading random letters');
     for (let i = 0; i < 16; i++) {
       random_letters.push(pick_random_letter_en());
     }
     setLetters(random_letters);
+  }, []);
+
+  const [dict, setDict] = useState<Typo>();
+  useEffect(() => {
+    console.log('loading spellchecker');
+    new Typo('en_GB', undefined, undefined, {
+      flags: {},
+      dictionaryPath: './word-wizard/dictionaries',
+    }).ready
+      .then((d) => {
+        console.log('dictionary loaded');
+        setDict(d);
+      })
+      .catch(console.log);
   }, []);
 
   // TODO spellcheck entered word to see if it exists
@@ -122,11 +138,10 @@ function App() {
       <WordSmith
         letters={letters}
         onChange={(s) => {
-          console.log('onChange: ', s);
           setCurrWord(s);
         }}
         onReturn={(s) => {
-          let spellchecked = s.includes('e');
+          let spellchecked = dict && dict.check(s);
           if (spellchecked) {
             let uniq = new Set([...treasureList, s]);
             setTreasureList(Array.from(uniq).sort());
