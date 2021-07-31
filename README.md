@@ -14,3 +14,4 @@ Try to construct as many words as you can from a set of 16 letters.
 - [ ] describe game play
 - [ ] visual feedback for miss spelled words
 - [ ] make enter button work
+- [ ] make letter clickable for mobile
