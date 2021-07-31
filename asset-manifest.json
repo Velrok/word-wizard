@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/word-wizard/static/css/main.f5aee726.chunk.css",
-    "main.js": "/word-wizard/static/js/main.dc3c5c38.chunk.js",
-    "main.js.map": "/word-wizard/static/js/main.dc3c5c38.chunk.js.map",
-    "runtime-main.js": "/word-wizard/static/js/runtime-main.2d884eda.js",
-    "runtime-main.js.map": "/word-wizard/static/js/runtime-main.2d884eda.js.map",
-    "static/js/2.c4271fdb.chunk.js": "/word-wizard/static/js/2.c4271fdb.chunk.js",
-    "static/js/2.c4271fdb.chunk.js.map": "/word-wizard/static/js/2.c4271fdb.chunk.js.map",
-    "static/js/3.505d8484.chunk.js": "/word-wizard/static/js/3.505d8484.chunk.js",
-    "static/js/3.505d8484.chunk.js.map": "/word-wizard/static/js/3.505d8484.chunk.js.map",
+    "main.css": "/word-wizard/static/css/main.f10a49c1.chunk.css",
+    "main.js": "/word-wizard/static/js/main.3aec529d.chunk.js",
+    "main.js.map": "/word-wizard/static/js/main.3aec529d.chunk.js.map",
+    "runtime-main.js": "/word-wizard/static/js/runtime-main.b5dc6d89.js",
+    "runtime-main.js.map": "/word-wizard/static/js/runtime-main.b5dc6d89.js.map",
+    "static/js/2.cb0d90de.chunk.js": "/word-wizard/static/js/2.cb0d90de.chunk.js",
+    "static/js/2.cb0d90de.chunk.js.map": "/word-wizard/static/js/2.cb0d90de.chunk.js.map",
+    "static/js/3.cb985ccd.chunk.js": "/word-wizard/static/js/3.cb985ccd.chunk.js",
+    "static/js/3.cb985ccd.chunk.js.map": "/word-wizard/static/js/3.cb985ccd.chunk.js.map",
     "index.html": "/word-wizard/index.html",
-    "static/css/main.f5aee726.chunk.css.map": "/word-wizard/static/css/main.f5aee726.chunk.css.map",
-    "static/js/2.c4271fdb.chunk.js.LICENSE.txt": "/word-wizard/static/js/2.c4271fdb.chunk.js.LICENSE.txt"
+    "static/css/main.f10a49c1.chunk.css.map": "/word-wizard/static/css/main.f10a49c1.chunk.css.map",
+    "static/js/2.cb0d90de.chunk.js.LICENSE.txt": "/word-wizard/static/js/2.cb0d90de.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2d884eda.js",
-    "static/js/2.c4271fdb.chunk.js",
-    "static/css/main.f5aee726.chunk.css",
-    "static/js/main.dc3c5c38.chunk.js"
+    "static/js/runtime-main.b5dc6d89.js",
+    "static/js/2.cb0d90de.chunk.js",
+    "static/css/main.f10a49c1.chunk.css",
+    "static/js/main.3aec529d.chunk.js"
   ]
 }
