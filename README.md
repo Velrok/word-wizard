@@ -11,3 +11,6 @@ Try to construct as many words as you can from a set of 16 letters.
 - [ ] display word scores
 - [ ] styling
 - [ ] sending a challenge
+- [ ] describe game play
+- [ ] visual feedback for miss spelled words
+- [ ] make enter button work
