@@ -111,7 +111,7 @@ function App() {
     console.log('loading spellchecker');
     new Typo('en_GB', undefined, undefined, {
       flags: {},
-      dictionaryPath: './word-wizard/dictionaries',
+      dictionaryPath: process.env.PUBLIC_URL + '/dictionaries',
     }).ready
       .then((d) => {
         console.log('dictionary loaded');
