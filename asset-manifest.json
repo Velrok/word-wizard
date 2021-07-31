@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/word-wizard/static/css/main.f5aee726.chunk.css",
-    "main.js": "/word-wizard/static/js/main.67d5ae0d.chunk.js",
-    "main.js.map": "/word-wizard/static/js/main.67d5ae0d.chunk.js.map",
-    "runtime-main.js": "/word-wizard/static/js/runtime-main.53c59549.js",
-    "runtime-main.js.map": "/word-wizard/static/js/runtime-main.53c59549.js.map",
-    "static/js/2.266793c1.chunk.js": "/word-wizard/static/js/2.266793c1.chunk.js",
-    "static/js/2.266793c1.chunk.js.map": "/word-wizard/static/js/2.266793c1.chunk.js.map",
-    "static/js/3.c331fd9f.chunk.js": "/word-wizard/static/js/3.c331fd9f.chunk.js",
-    "static/js/3.c331fd9f.chunk.js.map": "/word-wizard/static/js/3.c331fd9f.chunk.js.map",
+    "main.js": "/word-wizard/static/js/main.3bd3fee1.chunk.js",
+    "main.js.map": "/word-wizard/static/js/main.3bd3fee1.chunk.js.map",
+    "runtime-main.js": "/word-wizard/static/js/runtime-main.2d884eda.js",
+    "runtime-main.js.map": "/word-wizard/static/js/runtime-main.2d884eda.js.map",
+    "static/js/2.c4271fdb.chunk.js": "/word-wizard/static/js/2.c4271fdb.chunk.js",
+    "static/js/2.c4271fdb.chunk.js.map": "/word-wizard/static/js/2.c4271fdb.chunk.js.map",
+    "static/js/3.505d8484.chunk.js": "/word-wizard/static/js/3.505d8484.chunk.js",
+    "static/js/3.505d8484.chunk.js.map": "/word-wizard/static/js/3.505d8484.chunk.js.map",
     "index.html": "/word-wizard/index.html",
     "static/css/main.f5aee726.chunk.css.map": "/word-wizard/static/css/main.f5aee726.chunk.css.map",
-    "static/js/2.266793c1.chunk.js.LICENSE.txt": "/word-wizard/static/js/2.266793c1.chunk.js.LICENSE.txt"
+    "static/js/2.c4271fdb.chunk.js.LICENSE.txt": "/word-wizard/static/js/2.c4271fdb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.53c59549.js",
-    "static/js/2.266793c1.chunk.js",
+    "static/js/runtime-main.2d884eda.js",
+    "static/js/2.c4271fdb.chunk.js",
     "static/css/main.f5aee726.chunk.css",
-    "static/js/main.67d5ae0d.chunk.js"
+    "static/js/main.3bd3fee1.chunk.js"
   ]
 }
