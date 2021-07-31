@@ -1,6 +1,6 @@
 import dist from "./letter-dist-en.json";
 const TOTAL_WEIGHT: number = dist.reduce((agg, item) => {
-  const [_letter, weight] = item;
+  const [_, weight] = item;
   return agg + Number(weight);
 }, 0);
 
