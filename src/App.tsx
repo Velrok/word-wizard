@@ -41,7 +41,6 @@ const Lettergrid: FC<{ letters: string[]; highlighted: string[] }> = ({
   );
 };
 
-// TODO restrict or highlight letters that are not in the random_letters list
 const WordSmith: FC<{
   letters: string[];
   onChange: (arg0: string) => void;
@@ -120,13 +119,7 @@ function App() {
       .catch(console.log);
   }, []);
 
-  // TODO spellcheck entered word to see if it exists
-  // TODO score each valid word
-  // TODO display word scores and totals
-  // TODO only allow enterting letters which are not taken yet
-  // TODO fancy styling
-  // TODO  - grey out (highlight) types letters
-
+  // TODO display word scores
   let score = treasureList.reduce((score, word) => score + word.length, 0);
 
   return (
