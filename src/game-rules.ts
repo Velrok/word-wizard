@@ -1,4 +1,4 @@
-import { shuffle_array, pick_random_letter_en, drop_item_mut } from './util';
+import { shuffle_array, drop_item_mut } from './util';
 import dist from './letter-dist-en.json';
 const MAX_WEIGHT: number = Math.max(...dist.map((pair) => Number(pair[1])));
 
