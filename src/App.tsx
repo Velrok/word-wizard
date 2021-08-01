@@ -6,21 +6,10 @@ import Lettergrid from './Lettergrid';
 import WordSmith from './WordSmith';
 import WordTreasure from './WordTreasure';
 import Score from './Score';
-import { drop_item_mut } from './util';
+import { allowedAddition } from './game_rules';
 
 function App() {
   const [currWord, setCurrWord] = useState('');
-  const allowedAddition = (
-    letters: string[],
-    currentWord: string,
-    newLetter: string
-  ) => {
-    // Note: this is ugly, because it mutes the taken field as a side
-    // effect
-    let taken = `${currentWord}`.split('');
-    let available = letters.filter((l) => !drop_item_mut(taken, l));
-    return available.includes(newLetter);
-  };
   const [letters, setLetters] = useState<string[]>([]);
   const [treasureList, setTreasureList] = useState<string[]>([]);
 
@@ -57,7 +46,7 @@ function App() {
       </header>
       <p>
         Conjure as many british english words as possible from this set of
-        letters.
+        letters. One and two letter word are worthless.
       </p>
       <Lettergrid
         onClick={(l) => {

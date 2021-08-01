@@ -10,6 +10,7 @@ const WordSmith: FC<{
 }> = ({ isValidAddition, currentWord, onChange, onReturn, letters }) => (
   <div className="WordSmith">
     <input
+      className="WordSmith_input"
       value={currentWord}
       placeholder="type here"
       onChange={(e) => onChange(e.currentTarget.value.toLowerCase())}
@@ -35,7 +36,15 @@ const WordSmith: FC<{
       }}
       tabIndex={100}
     />
-    {<button onClick={(_e) => onReturn(currentWord)}>⏎</button>}
+    <button className="WordSmith_enter" onClick={(_e) => onReturn(currentWord)}>
+      ⏎
+    </button>
+    <button
+      className="WordSmith_backspace"
+      onClick={(_e) => onChange(currentWord.slice(0, -1))}
+    >
+      ⌫
+    </button>
   </div>
 );
 
