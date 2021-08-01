@@ -1,0 +1,30 @@
+:root {
+  /* Template 1 */
+  --melon: #fec5bbff;
+  --pale-pink: #fcd5ceff;
+  --misty-rose: #fae1ddff;
+  --isabelline: #f8edebff;
+  --platinum: #e8e8e4ff;
+  --alabaster: #d8e2dcff;
+  --linen: #ece4dbff;
+  --champagne-pink: #ffe5d9ff;
+  --peach-puff: #ffd7baff;
+  --peach-crayola: #fec89aff;
+
+  /* Template 2 */
+  --navy-blue: #03045eff;
+  --dark-cornflower-blue: #023e8aff;
+  --star-command-blue: #0077b6ff;
+  --blue-green: #0096c7ff;
+  --cerulean-crayola: #00b4d8ff;
+  --sky-blue-crayola: #48cae4ff;
+  --sky-blue-crayola-2: #90e0efff;
+  --blizzard-blue: #ade8f4ff;
+  --powder-blue: #caf0f8ff;
+
+  --page-background: var(--powder-blue);
+  --page-font-color: var(--navy-blue);
+  --button-border: var(--navy-blue);
+  --button-bg: var(--sky-blue-crayola);
+  --button-font-color: var(--dark-cornflower-blue);
+}

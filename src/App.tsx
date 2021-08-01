@@ -13,7 +13,7 @@ function App() {
   const [treasureList, setTreasureList] = useState<string[]>([]);
 
   useEffect(() => {
-    setLetters(randomLetters(16));
+    setLetters(randomLetters(20));
   }, []);
 
   const [dict, setDict] = useState<Typo>();
@@ -37,7 +37,7 @@ function App() {
       <header className="App-header">
         <h1>Word Wizard</h1>
       </header>
-      <p>
+      <p className="App_description">
         Conjure as many british english words as possible from this set of
         letters. One and two letter words are worthless.
       </p>

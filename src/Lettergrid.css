@@ -1,16 +1,26 @@
 .Lettergrid {
   display: grid;
-  grid-template-columns: 2rem 2rem 2rem 2rem;
-  grid-gap: 0.4rem;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 1rem;
+  justify-self: center;
+  margin: 1em 0;
 }
+
 .Lettergrid-letter {
-  border: 1px solid grey;
+  border: none;
   display: block;
-  width: 2rem;
-  line-height: 2rem;
+  width: 1.7em;
+  line-height: 1.7em;
   text-align: center;
+  border-radius: 15%;
+  background-color: var(--button-bg);
+  color: var(--button-font-color);
+  /*
+  * box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+  /* box-shadow: 2px 2px 17px 1px #000000; */
 }
 
 .Lettergrid-letter-highlighted {
-  background-color: green;
+  box-shadow: 1px 1px 8px 2px var(--dark-cornflower-blue) inset;
 }
