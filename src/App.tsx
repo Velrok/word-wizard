@@ -46,7 +46,7 @@ function App() {
       </header>
       <p>
         Conjure as many british english words as possible from this set of
-        letters. One and two letter word are worthless.
+        letters. One and two letter words are worthless.
       </p>
       <Lettergrid
         onClick={(l) => {
