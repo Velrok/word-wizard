@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { pick_random_letter_en } from './util';
 import { Typo } from 'typo-js-ts';
 import Lettergrid from './Lettergrid';
 import WordSmith from './WordSmith';
 import WordTreasure from './WordTreasure';
 import Score from './Score';
-import { allowedAddition } from './game_rules';
+import { allowedAddition, randomLetters } from './game-rules';
 
 function App() {
   const [currWord, setCurrWord] = useState('');
@@ -14,13 +13,7 @@ function App() {
   const [treasureList, setTreasureList] = useState<string[]>([]);
 
   useEffect(() => {
-    const random_letters: string[] = [];
-
-    console.log('loading random letters');
-    for (let i = 0; i < 16; i++) {
-      random_letters.push(pick_random_letter_en());
-    }
-    setLetters(random_letters);
+    setLetters(randomLetters(16));
   }, []);
 
   const [dict, setDict] = useState<Typo>();

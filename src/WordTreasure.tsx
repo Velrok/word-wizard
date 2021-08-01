@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './WordTreasure.css';
-import { wordScore } from './game_rules';
+import { wordScore } from './game-rules';
 
 const WordTreasure: FC<{ words: string[] }> = ({ words }) => (
   <div className="WordTreasure">
