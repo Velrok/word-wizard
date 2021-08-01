@@ -8,12 +8,12 @@ Try to construct as many words as you can from a set of 16 letters.
 
 # ToDo
 
-- [ ] display word scores
+- [x] display word scores
+- [x] ignore on and two letter words (mention that in description)
+- [x] describe game play
+- [x] make enter button work
+- [x] make letter clickable for mobile
 - [ ] styling
 - [ ] sending a challenge
-- [ ] describe game play
 - [ ] visual feedback for miss spelled words
-- [ ] make enter button work
-- [ ] make letter clickable for mobile
 - [ ] better scoring function
-- [ ] ignore on and two letter words (mention that in description)
