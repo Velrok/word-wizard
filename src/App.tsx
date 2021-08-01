@@ -1,97 +1,12 @@
 import React, { FC, useState, useEffect } from 'react';
 import './App.css';
-import './Lettergrid.css';
-import './WordSmith.css';
-import './WordTreasure.css';
-import './Score.css';
 import { pick_random_letter_en } from './util';
 import { Typo } from 'typo-js-ts';
+import Lettergrid from './Lettergrid';
+import WordSmith from './WordSmith';
+import WordTreasure from './WordTreasure';
+import Score from './Score';
 
-const drop_item_mut: <T>(array: Array<T>, item: T) => Boolean = (
-  array,
-  item
-) => {
-  const i = array.indexOf(item);
-  if (i >= 0) {
-    array.splice(i, 1);
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const Lettergrid: FC<{ letters: string[]; highlighted: string[] }> = ({
-  letters,
-  highlighted,
-}) => {
-  let letter_pool = [...highlighted];
-  return (
-    <div className="Lettergrid">
-      {letters.map((l, i) => {
-        let classname = 'Lettergrid-letter';
-        if (drop_item_mut(letter_pool, l)) {
-          classname += ' Lettergrid-letter-highlighted';
-        }
-        return (
-          <span key={i} className={classname}>
-            {l}
-          </span>
-        );
-      })}
-    </div>
-  );
-};
-
-const WordSmith: FC<{
-  letters: string[];
-  onChange: (arg0: string) => void;
-  onReturn: (arg0: string) => Boolean;
-}> = ({ onChange, onReturn, letters }) => (
-  <div className="WordSmith">
-    <input
-      placeholder="type here"
-      onChange={(e) => onChange(e.currentTarget.value)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter') {
-          if (onReturn(e.currentTarget.value)) {
-            e.currentTarget.value = '';
-          }
-          return true;
-        } else if (e.key >= 'a' && e.key <= 'z') {
-          // Note: this is ugly, because it mutes the taken field as a side
-          // effect
-          let taken = e.currentTarget.value.split('');
-          let available = letters.filter((l) => !drop_item_mut(taken, l));
-
-          if (available.includes(e.key)) {
-            return true;
-          } else {
-            e.preventDefault();
-            return false;
-          }
-        }
-      }}
-      tabIndex={100}
-    />
-    {
-      // <button>⏎</button>
-    }
-  </div>
-);
-
-const WordTreasure: FC<{ words: string[] }> = ({ words }) => (
-  <div className="WordTreasure">
-    <ol>
-      {words.map((w) => (
-        <li key={w}>{w}</li>
-      ))}
-    </ol>
-  </div>
-);
-
-const Score: FC<{ score: number }> = ({ score }) => (
-  <div className="Score">Score: {score}</div>
-);
 
 function App() {
   const [currWord, setCurrWord] = useState('');

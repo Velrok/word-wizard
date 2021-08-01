@@ -19,3 +19,18 @@ export const pick_random_letter_en: () => string = () => {
   }
   throw new Error("A letter should have been found.");
 };
+
+export const drop_item_mut: <T>(array: Array<T>, item: T) => Boolean = (
+  array,
+  item
+) => {
+  const i = array.indexOf(item);
+  if (i >= 0) {
+    array.splice(i, 1);
+    return true;
+  } else {
+    return false;
+  }
+};
+
+
