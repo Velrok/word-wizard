@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { pick_random_letter_en } from './util';
 import { Typo } from 'typo-js-ts';
@@ -6,10 +6,21 @@ import Lettergrid from './Lettergrid';
 import WordSmith from './WordSmith';
 import WordTreasure from './WordTreasure';
 import Score from './Score';
-
+import { drop_item_mut } from './util';
 
 function App() {
   const [currWord, setCurrWord] = useState('');
+  const allowedAddition = (
+    letters: string[],
+    currentWord: string,
+    newLetter: string
+  ) => {
+    // Note: this is ugly, because it mutes the taken field as a side
+    // effect
+    let taken = `${currentWord}`.split('');
+    let available = letters.filter((l) => !drop_item_mut(taken, l));
+    return available.includes(newLetter);
+  };
   const [letters, setLetters] = useState<string[]>([]);
   const [treasureList, setTreasureList] = useState<string[]>([]);
 
@@ -48,8 +59,16 @@ function App() {
         Conjure as many british english words as possible from this set of
         letters.
       </p>
-      <Lettergrid letters={letters} highlighted={currWord.split('')} />
+      <Lettergrid
+        onClick={(l) => {
+          allowedAddition(letters, currWord, l) && setCurrWord(currWord + l);
+        }}
+        letters={letters}
+        highlighted={currWord.split('')}
+      />
       <WordSmith
+        isValidAddition={allowedAddition}
+        currentWord={currWord}
         letters={letters}
         onChange={(s) => {
           setCurrWord(s);

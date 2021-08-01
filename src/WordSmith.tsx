@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
-import { drop_item_mut } from './util';
 import './WordSmith.css';
 
 const WordSmith: FC<{
   letters: string[];
+  currentWord: string;
+  isValidAddition: (arg0: string[], arg1: string, arg2: string) => Boolean;
   onChange: (arg0: string) => void;
   onReturn: (arg0: string) => Boolean;
-}> = ({ onChange, onReturn, letters }) => (
+}> = ({ isValidAddition, currentWord, onChange, onReturn, letters }) => (
   <div className="WordSmith">
     <input
+      value={currentWord}
       placeholder="type here"
       onChange={(e) => onChange(e.currentTarget.value.toLowerCase())}
       onKeyDown={(e) => {
@@ -23,13 +25,7 @@ const WordSmith: FC<{
           (e.key >= 'a' && e.key <= 'z') ||
           (e.key >= 'A' && e.key <= 'Z')
         ) {
-          // Note: this is ugly, because it mutes the taken field as a side
-          // effect
-          let taken = e.currentTarget.value.split('');
-          let available = letters.filter((l) => !drop_item_mut(taken, l));
-          let key = e.key.toLowerCase();
-
-          if (available.includes(key)) {
+          if (isValidAddition(letters, currentWord, e.key.toLowerCase())) {
             return true;
           } else {
             e.preventDefault();
@@ -39,9 +35,7 @@ const WordSmith: FC<{
       }}
       tabIndex={100}
     />
-    {
-      // <button>⏎</button>
-    }
+    {<button onClick={(_e) => onReturn(currentWord)}>⏎</button>}
   </div>
 );
 
