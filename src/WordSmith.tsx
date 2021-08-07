@@ -3,14 +3,24 @@ import './WordSmith.css';
 
 const WordSmith: FC<{
   letters: string[];
+  spellcheck: (word: string) => boolean;
   currentWord: string;
   isValidAddition: (arg0: string[], arg1: string, arg2: string) => Boolean;
   onChange: (arg0: string) => void;
   onReturn: (arg0: string) => Boolean;
-}> = ({ isValidAddition, currentWord, onChange, onReturn, letters }) => (
+}> = ({
+  spellcheck,
+  isValidAddition,
+  currentWord,
+  onChange,
+  onReturn,
+  letters,
+}) => (
   <div className="WordSmith">
     <input
-      className="WordSmith_input"
+      className={`WordSmith_input ${
+        spellcheck(currentWord) && 'WordSmith_input_valid'
+      }`}
       value={currentWord}
       placeholder="type here"
       onChange={(e) => onChange(e.currentTarget.value.toLowerCase())}
@@ -38,6 +48,7 @@ const WordSmith: FC<{
     />
     <button
       className="btn WordSmith_enter"
+      disabled={!spellcheck(currentWord)}
       onClick={(_e) => onReturn(currentWord)}
     >
       ⏎

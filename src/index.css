@@ -1,3 +1,6 @@
+:root {
+  --animation-time: 150ms;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -26,16 +29,33 @@ h1 {
 }
 
 button,
+.btn,
 input {
   border-radius: 2rem;
   border: none;
+  padding: 0.125em 0.75em;
+  box-shadow: 0px 0px 5px 0px;
+}
+
+button,
+.btn {
+  background-color: var(--button-bg);
+  color: var(--button-font-color);
+  transition: background-color var(--animation-time),
+    box-shadow var(--animation-time), color var(--animation-time);
+}
+
+button:disabled,
+.btn:disabled {
+  background-color: var(--button-bg-disabled);
+  color: var(--button-font-color-disabled);
 }
 
 input {
   padding-left: 1rem;
 }
 
-button {
-  background-color: var(--button-bg);
-  color: var(--button-font-color);
+input:focus {
+  border-radius: 2rem;
+  outline: none;
 }

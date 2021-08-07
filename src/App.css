@@ -4,15 +4,42 @@
   grid-template-columns: 100%;
 }
 
+@media only screen and (max-width: 700px) {
+  .App {
+    grid-template-columns: 100%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .App {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'header header'
+      'description description'
+      'left right';
+    grid-gap: 1rem;
+  }
+
+  .App-header {
+    grid-area: header;
+  }
+
+  .App_description {
+    grid-area: description;
+  }
+  .inputs {
+    grid-area: left;
+  }
+  .outputs {
+    grid-area: right;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
 .App_description {
   font-size: 65%;
   color: grey;
-}
-
-.btn {
-  border: none;
-  padding: 0.125em 1em;
-  background-color: var(--button-bg);
-  color: var(--button-font-color);
-  box-shadow: 0px 0px 5px 0px;
 }

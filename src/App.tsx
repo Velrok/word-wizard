@@ -41,34 +41,39 @@ function App() {
         Conjure as many british english words as possible from this set of
         letters. One and two letter words are worthless.
       </p>
-      <Lettergrid
-        onClick={(l) => {
-          allowedAddition(letters, currWord, l) && setCurrWord(currWord + l);
-        }}
-        letters={letters}
-        highlighted={currWord.split('')}
-      />
-      <WordSmith
-        isValidAddition={allowedAddition}
-        currentWord={currWord}
-        letters={letters}
-        onChange={(s) => {
-          setCurrWord(s);
-        }}
-        onReturn={(s) => {
-          let spellchecked = dict && dict.check(s);
-          if (spellchecked) {
-            let uniq = new Set([...treasureList, s]);
-            setTreasureList(Array.from(uniq).sort());
-            setCurrWord('');
-            return true;
-          } else {
-            return false;
-          }
-        }}
-      />
-      <Score score={score} />
-      <WordTreasure words={treasureList} />
+      <div className="inputs">
+        <Lettergrid
+          onClick={(l) => {
+            allowedAddition(letters, currWord, l) && setCurrWord(currWord + l);
+          }}
+          letters={letters}
+          highlighted={currWord.split('')}
+        />
+        <WordSmith
+          isValidAddition={allowedAddition}
+          spellcheck={(word: string) => (dict && dict.check(word)) || false}
+          currentWord={currWord}
+          letters={letters}
+          onChange={(s) => {
+            setCurrWord(s);
+          }}
+          onReturn={(s) => {
+            let spellchecked = dict && dict.check(s);
+            if (spellchecked) {
+              let uniq = new Set([...treasureList, s]);
+              setTreasureList(Array.from(uniq).sort());
+              setCurrWord('');
+              return true;
+            } else {
+              return false;
+            }
+          }}
+        />
+      </div>
+      <div className="outputs">
+        <Score score={score} />
+        <WordTreasure words={treasureList} />
+      </div>
     </div>
   );
 }

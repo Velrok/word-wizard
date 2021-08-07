@@ -8,6 +8,17 @@
   font-size: 100%;
   min-width: 10ch;
   display: inline-block;
+  box-shadow: none;
+  transition: box-shadow 1s;
+}
+
+.WordSmith_input_valid {
+  box-shadow: 0px 0px 10px 5px var(--sky-blue-crayola-2),
+    0px 0px 15px 20px var(--blizzard-blue);
+}
+
+.WordSmith_input:hover,
+.WordSmith_input:focus {
 }
 
 .WordSmith_enter,
