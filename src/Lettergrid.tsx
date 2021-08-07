@@ -11,7 +11,7 @@ const Lettergrid: FC<{
   return (
     <div className="Lettergrid">
       {letters.map((l, i) => {
-        let classname = 'Lettergrid-letter';
+        let classname = 'Lettergrid-letter btn';
         if (drop_item_mut(letter_pool, l)) {
           classname += ' Lettergrid-letter-highlighted';
         }

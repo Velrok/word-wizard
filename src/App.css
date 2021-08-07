@@ -1,9 +1,18 @@
 .App {
   margin: 1rem;
   display: grid;
+  grid-template-columns: 100%;
 }
 
 .App_description {
   font-size: 65%;
   color: grey;
+}
+
+.btn {
+  border: none;
+  padding: 0.125em 1em;
+  background-color: var(--button-bg);
+  color: var(--button-font-color);
+  box-shadow: 0px 0px 5px 0px;
 }

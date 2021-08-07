@@ -36,11 +36,14 @@ const WordSmith: FC<{
       }}
       tabIndex={100}
     />
-    <button className="WordSmith_enter" onClick={(_e) => onReturn(currentWord)}>
+    <button
+      className="btn WordSmith_enter"
+      onClick={(_e) => onReturn(currentWord)}
+    >
       ⏎
     </button>
     <button
-      className="WordSmith_backspace"
+      className="btn WordSmith_backspace"
       onClick={(_e) => onChange(currentWord.slice(0, -1))}
     >
       ⌫
