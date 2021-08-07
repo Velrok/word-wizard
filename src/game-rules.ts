@@ -28,11 +28,9 @@ export const randomLetters: (arg0: number) => string[] = (count: number) => {
   for (let [l, weight] of dist) {
     let probability = Number(weight) / MAX_WEIGHT;
     let tickets = Math.ceil(probability * maxOccurence);
-    console.log(l, 'weight', Number(weight), 'tickets', tickets);
     for (let i = 0; i < tickets; i++) {
       pool.push(String(l));
     }
   }
-  console.log('pool', pool);
   return shuffle_array(pool).slice(0, count);
 };
