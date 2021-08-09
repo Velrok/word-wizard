@@ -6,15 +6,68 @@ import WordSmith from './WordSmith';
 import WordTreasure from './WordTreasure';
 import Score from './Score';
 import { allowedAddition, randomLetters } from './game-rules';
+import {
+  BrowserRouter as Router,
+  useLocation,
+  useHistory,
+  Link,
+} from 'react-router-dom';
+import qs from 'query-string';
+import msgpack from 'msgpack-lite';
+import { Base64 } from 'js-base64';
+
+type AppParams = {
+  letters?: string;
+  myTreasure?: string[];
+};
+
+const encodeWords: (words: string[]) => string = (words) => {
+  const msg = msgpack.encode(words);
+  return Base64.fromUint8Array(msg, true);
+};
+
+const decodeWords: (arg0: string) => string[] = (encoded) => {
+  const decoded = Base64.toUint8Array(encoded);
+  return msgpack.decode(decoded);
+};
 
 function App() {
+  const { search } = useLocation();
+  const urlParams = qs.parse(search);
+  const history = useHistory();
+
+  const update_query_params = (updates: {}) => {
+    const new_params: AppParams = { ...urlParams, ...updates };
+    if (qs.stringify(urlParams) !== qs.stringify(new_params)) {
+      history.push({ search: '?' + qs.stringify(new_params) });
+      console.log('new query params > ', new_params);
+    }
+  };
+
+  const given_letters =
+    (urlParams['letters'] && String(urlParams['letters']).split('')) || [];
+
   const [currWord, setCurrWord] = useState('');
-  const [letters, setLetters] = useState<string[]>([]);
-  const [treasureList, setTreasureList] = useState<string[]>([]);
+  const [letters, _setLetters] = useState<string[]>(given_letters);
+  const setLetters = (letters: string[]) => {
+    update_query_params({ letters: letters.join('') });
+    _setLetters(letters);
+  };
+
+  const givenTreasure =
+    (urlParams['treasure'] && decodeWords(String(urlParams['treasure']))) || [];
+  const [treasureList, _setTreasureList] = useState<string[]>(givenTreasure);
+  const setTreasureList = (words: string[]) => {
+    update_query_params({ treasure: encodeWords(words) });
+    _setTreasureList(words);
+  };
 
   useEffect(() => {
-    setLetters(randomLetters(20));
-  }, []);
+    if (letters.length < 1) {
+      console.log('letters', letters);
+      setLetters(randomLetters(20));
+    }
+  }, [letters]);
 
   const [dict, setDict] = useState<Typo>();
   useEffect(() => {
@@ -74,8 +127,15 @@ function App() {
         <Score score={score} />
         <WordTreasure words={treasureList} />
       </div>
+      <Link to={'.'}>New Game</Link>
     </div>
   );
 }
 
-export default App;
+const AppStack = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppStack;
