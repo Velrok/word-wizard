@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/word-wizard/static/css/main.8071f6fa.chunk.css",
-    "main.js": "/word-wizard/static/js/main.b103ac55.chunk.js",
-    "main.js.map": "/word-wizard/static/js/main.b103ac55.chunk.js.map",
+    "main.js": "/word-wizard/static/js/main.0c6e1b6d.chunk.js",
+    "main.js.map": "/word-wizard/static/js/main.0c6e1b6d.chunk.js.map",
     "runtime-main.js": "/word-wizard/static/js/runtime-main.0bf63371.js",
     "runtime-main.js.map": "/word-wizard/static/js/runtime-main.0bf63371.js.map",
     "static/js/2.fc8b0191.chunk.js": "/word-wizard/static/js/2.fc8b0191.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0bf63371.js",
     "static/js/2.fc8b0191.chunk.js",
     "static/css/main.8071f6fa.chunk.css",
-    "static/js/main.b103ac55.chunk.js"
+    "static/js/main.0c6e1b6d.chunk.js"
   ]
 }
