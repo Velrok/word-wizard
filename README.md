@@ -1,9 +1,12 @@
+[![Build](https://github.com/Velrok/word-wizard/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Velrok/word-wizard/actions/workflows/build.yml)
+
 # A small word game
 
 Try to construct as many words as you can from a set of 16 letters.
 
 
-<img width="346" alt="Screenshot 2021-07-29 at 23 23 08" src="https://user-images.githubusercontent.com/34974/127573275-abf14633-2657-4691-a696-3304b5bce0e6.png">
+<img width="625" alt="Screenshot 2021-08-10 at 00 21 54" src="https://user-images.githubusercontent.com/34974/128786305-b6c223e5-7d25-4744-9aec-cd903e85de40.png">
+
 
 
 # ToDo
@@ -13,7 +16,7 @@ Try to construct as many words as you can from a set of 16 letters.
 - [x] describe game play
 - [x] make enter button work
 - [x] make letter clickable for mobile
-- [ ] styling
+- [x] styling
 - [ ] sending a challenge
-- [ ] visual feedback for miss spelled words
+- [x] visual feedback for miss spelled words
 - [ ] better scoring function
