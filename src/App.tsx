@@ -137,6 +137,7 @@ function App() {
       <Link
         target="_blank"
         to={{
+          pathname: '.',
           search: qs.stringify({
             letters: letters.join(''),
             targetScore: score,
