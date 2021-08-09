@@ -18,7 +18,8 @@ import { Base64 } from 'js-base64';
 
 type AppParams = {
   letters?: string;
-  myTreasure?: string[];
+  treasure?: string[];
+  targetScore?: string;
 };
 
 const encodeWords: (words: string[]) => string = (words) => {
@@ -33,7 +34,7 @@ const decodeWords: (arg0: string) => string[] = (encoded) => {
 
 function App() {
   const { search } = useLocation();
-  const urlParams = qs.parse(search);
+  const urlParams: AppParams = qs.parse(search);
   const history = useHistory();
 
   const update_query_params = (updates: {}) => {
@@ -126,10 +127,24 @@ function App() {
         />
       </div>
       <div className="outputs">
-        <Score score={score} />
+        <Score
+          score={score}
+          target={Number(urlParams['targetScore'] || undefined)}
+        />
         <WordTreasure words={treasureList} />
       </div>
       <Link to={'.'}>New Game</Link>
+      <Link
+        target="_blank"
+        to={{
+          search: qs.stringify({
+            letters: letters.join(''),
+            targetScore: score,
+          }),
+        }}
+      >
+        Challenge Url
+      </Link>
     </div>
   );
 }
