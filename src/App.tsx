@@ -67,7 +67,7 @@ function App() {
       console.log('letters', letters);
       setLetters(randomLetters(20));
     }
-  }, [letters]);
+  }, [letters, setLetters]);
 
   const [dict, setDict] = useState<Typo>();
   useEffect(() => {
