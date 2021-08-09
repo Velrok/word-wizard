@@ -62,12 +62,14 @@ function App() {
     _setTreasureList(words);
   };
 
+  const num_letters = letters.length;
+
   useEffect(() => {
-    if (letters.length < 1) {
-      console.log('letters', letters);
+    if (num_letters === 0) {
       setLetters(randomLetters(20));
     }
-  }, [letters, setLetters]);
+    // eslint-disable-next-line
+  }, [num_letters]);
 
   const [dict, setDict] = useState<Typo>();
   useEffect(() => {
