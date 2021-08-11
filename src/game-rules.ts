@@ -18,7 +18,45 @@ export const wordScore = (word: string) => {
   if (word.length <= 2) {
     return 0;
   } else {
-    return word.length;
+    return word.split('').reduce((score: number, letter: string) => {
+      switch (letter) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'l':
+        case 'n':
+        case 'o':
+        case 'r':
+        case 's':
+        case 't':
+        case 'u':
+          return 1 + score;
+        case 'd':
+        case 'g':
+          return 2 + score;
+        case 'b':
+        case 'c':
+        case 'm':
+        case 'p':
+          return 3 + score;
+        case 'f':
+        case 'h':
+        case 'v':
+        case 'w':
+        case 'y':
+          return 4 + score;
+        case 'k':
+          return 5 + score;
+        case 'j':
+        case 'x':
+          return 8 + score;
+        case 'q':
+        case 'z':
+          return 10 + score;
+        default:
+          return score;
+      }
+    }, 0);
   }
 };
 

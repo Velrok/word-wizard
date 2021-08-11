@@ -5,7 +5,7 @@ import Lettergrid from './Lettergrid';
 import WordSmith from './WordSmith';
 import WordTreasure from './WordTreasure';
 import Score from './Score';
-import { allowedAddition, randomLetters } from './game-rules';
+import { wordScore, allowedAddition, randomLetters } from './game-rules';
 import {
   BrowserRouter as Router,
   useLocation,
@@ -74,7 +74,7 @@ function App() {
   }, [num_letters]);
 
   useEffect(() => {
-    setScore(treasureList.reduce((score, word) => score + word.length, 0));
+    setScore(treasureList.reduce((score, word) => score + wordScore(word), 0));
   }, [treasureList]);
 
   const [dict, setDict] = useState<Typo>();
