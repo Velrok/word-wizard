@@ -1,2 +1,17 @@
 .WordTreasure {
 }
+
+.WordTreasure_word--newest {
+  background: gold;
+  animation-name: slide-in;
+  animation-duration: 4s;
+}
+
+@keyframes slide-in {
+  from {
+    translation: translateX(200%);
+  }
+  to {
+    translation: translateX(0%);
+  }
+}
