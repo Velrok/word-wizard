@@ -32,6 +32,7 @@
   }
   .outputs {
     grid-area: right;
+    padding-left: 2rem;
   }
 }
 
