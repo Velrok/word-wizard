@@ -4,7 +4,7 @@ import { wordScore } from './game-rules';
 
 const getClasses = (words: string[], index: number, sortedIndex: number) => {
   const isLatest = (index: number) => index === words.length - 1;
-  let classes = [];
+  let classes = ['WordTreasure_word_item'];
   if (isLatest(index)) {
     classes.push('WordTreasure_word--newest');
   }
@@ -28,7 +28,7 @@ const WordTreasure: FC<{ words: string[] }> = ({ words }) => {
           .map(([w, index], sortedIndex) => (
             <li key={w} className={getClasses(words, index, sortedIndex)}>
               <span className="WordTreasure_word">{w} </span>
-              <span className="WordTreasure_word_score">({wordScore(w)})</span>
+              <span className="WordTreasure_word_score">{wordScore(w)}</span>
             </li>
           ))}
       </ol>
