@@ -1,17 +1,23 @@
 .WordTreasure {
 }
 
-.WordTreasure_word--newest {
-  background: gold;
-  animation-name: slide-in;
-  animation-duration: 4s;
+.WordTreasure_word--new-highscore {
+  color: gold;
+  text-shadow: 1px 1px 2px black;
+  transition: color 1s, text-shadow 1s;
 }
 
-@keyframes slide-in {
+.WordTreasure_word--newest {
+  animation-name: newstuff;
+  animation-duration: 500ms;
+  font-weight: bold;
+}
+
+@keyframes newstuff {
   from {
-    translation: translateX(200%);
+    font-weight: regular;
   }
   to {
-    translation: translateX(0%);
+    font-weight: bold;
   }
 }
