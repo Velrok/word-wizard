@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/word-wizard/static/css/main.edbe5dcf.chunk.css",
+    "main.css": "/word-wizard/static/css/main.0c1f7376.chunk.css",
     "main.js": "/word-wizard/static/js/main.b92690b1.chunk.js",
     "main.js.map": "/word-wizard/static/js/main.b92690b1.chunk.js.map",
     "runtime-main.js": "/word-wizard/static/js/runtime-main.0bf63371.js",
@@ -10,13 +10,13 @@
     "static/js/3.978c8a05.chunk.js": "/word-wizard/static/js/3.978c8a05.chunk.js",
     "static/js/3.978c8a05.chunk.js.map": "/word-wizard/static/js/3.978c8a05.chunk.js.map",
     "index.html": "/word-wizard/index.html",
-    "static/css/main.edbe5dcf.chunk.css.map": "/word-wizard/static/css/main.edbe5dcf.chunk.css.map",
+    "static/css/main.0c1f7376.chunk.css.map": "/word-wizard/static/css/main.0c1f7376.chunk.css.map",
     "static/js/2.b1e9039b.chunk.js.LICENSE.txt": "/word-wizard/static/js/2.b1e9039b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0bf63371.js",
     "static/js/2.b1e9039b.chunk.js",
-    "static/css/main.edbe5dcf.chunk.css",
+    "static/css/main.0c1f7376.chunk.css",
     "static/js/main.b92690b1.chunk.js"
   ]
 }
