@@ -133,19 +133,43 @@ function App() {
         />
         <WordTreasure words={treasureList} />
       </div>
-      <Link to={'.'}>New Game</Link>
-      <Link
-        target="_blank"
-        to={{
-          pathname: '.',
-          search: qs.stringify({
-            letters: letters.join(''),
-            targetScore: score,
-          }),
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: '2rem',
         }}
       >
-        Challenge Url
-      </Link>
+        <Link
+          style={{
+            paddingLeft: '1.5em',
+            paddingRight: '1.5em',
+            marginBottom: '1rem',
+          }}
+          className="btn"
+          to={'.'}
+        >
+          New Game
+        </Link>
+        <Link
+          className="btn"
+          style={{
+            paddingLeft: '1.5em',
+            paddingRight: '1.5em',
+            marginBottom: '1rem',
+          }}
+          target="_blank"
+          to={{
+            pathname: '.',
+            search: qs.stringify({
+              letters: letters.join(''),
+              targetScore: score,
+            }),
+          }}
+        >
+          Challenge
+        </Link>
+      </div>
     </div>
   );
 }

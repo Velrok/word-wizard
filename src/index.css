@@ -43,6 +43,8 @@ button,
   color: var(--button-font-color);
   transition: background-color var(--animation-time),
     box-shadow var(--animation-time), color var(--animation-time);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 button:disabled,
