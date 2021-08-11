@@ -118,7 +118,7 @@ function App() {
           }}
           onReturn={(s) => {
             let spellchecked = dict && dict.check(s);
-            if (spellchecked && treasureList.indexOf(s) == -1) {
+            if (spellchecked && treasureList.indexOf(s) === -1) {
               setTreasureList([...treasureList, s]);
               setCurrWord('');
               return true;
