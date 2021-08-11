@@ -48,6 +48,7 @@ function App() {
   const given_letters =
     (urlParams['letters'] && String(urlParams['letters']).split('')) || [];
 
+  const [score, setScore] = useState(0);
   const [currWord, setCurrWord] = useState('');
   const [letters, _setLetters] = useState<string[]>(given_letters);
   const setLetters = (letters: string[]) => {
@@ -72,6 +73,10 @@ function App() {
     // eslint-disable-next-line
   }, [num_letters]);
 
+  useEffect(() => {
+    setScore(treasureList.reduce((score, word) => score + word.length, 0));
+  }, [treasureList]);
+
   const [dict, setDict] = useState<Typo>();
   useEffect(() => {
     console.log('loading spellchecker');
@@ -85,8 +90,6 @@ function App() {
       })
       .catch(console.log);
   }, []);
-
-  let score = treasureList.reduce((score, word) => score + word.length, 0);
 
   return (
     <div className="App">
@@ -148,6 +151,11 @@ function App() {
           }}
           className="btn"
           to={'.'}
+          onClick={(_) => {
+            setTreasureList([]);
+            setCurrWord('');
+            setLetters([]);
+          }}
         >
           New Game
         </Link>
