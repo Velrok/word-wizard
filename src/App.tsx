@@ -118,9 +118,8 @@ function App() {
           }}
           onReturn={(s) => {
             let spellchecked = dict && dict.check(s);
-            if (spellchecked) {
-              let uniq = new Set([...treasureList, s]);
-              setTreasureList(Array.from(uniq).sort());
+            if (spellchecked && treasureList.indexOf(s) == -1) {
+              setTreasureList([...treasureList, s]);
               setCurrWord('');
               return true;
             } else {
