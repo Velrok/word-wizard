@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import './WordTreasure.css';
 import { wordScore } from './game-rules';
 
@@ -20,8 +20,20 @@ const Item: FC<{
   sortedIndex: number;
   word: string;
 }> = ({ words, index, sortedIndex, word }) => {
+  const scrollingRef = useCallback(
+    (el) =>
+      el &&
+      el.scrollIntoView({
+        behavior: 'smooth',
+      }),
+    [] // only once
+  );
   return (
-    <li key={word} className={getClasses(words, index, sortedIndex)}>
+    <li
+      ref={scrollingRef}
+      key={word}
+      className={getClasses(words, index, sortedIndex)}
+    >
       <span className="WordTreasure_word">{word} </span>
       <span className="WordTreasure_word_score">{wordScore(word)}</span>
     </li>
