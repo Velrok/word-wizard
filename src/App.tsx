@@ -127,6 +127,49 @@ function App() {
             }
           }}
         />
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '2rem',
+          }}
+        >
+          <Link
+            style={{
+              paddingLeft: '1.5em',
+              paddingRight: '1.5em',
+              marginBottom: '1rem',
+            }}
+            className="btn"
+            to={'.'}
+            onClick={(_) => {
+              setTreasureList([]);
+              setCurrWord('');
+              setLetters([]);
+            }}
+          >
+            New Game
+          </Link>
+          <Link
+            className="btn"
+            style={{
+              paddingLeft: '1.5em',
+              paddingRight: '1.5em',
+              marginBottom: '1rem',
+            }}
+            target="_blank"
+            to={{
+              pathname: '.',
+              search: qs.stringify({
+                letters: letters.join(''),
+                targetScore: score,
+              }),
+            }}
+          >
+            Challenge
+          </Link>
+        </div>
       </div>
       <div className="outputs">
         <Score
@@ -134,48 +177,6 @@ function App() {
           target={Number(urlParams['targetScore'] || undefined)}
         />
         <WordTreasure words={treasureList} />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: '2rem',
-        }}
-      >
-        <Link
-          style={{
-            paddingLeft: '1.5em',
-            paddingRight: '1.5em',
-            marginBottom: '1rem',
-          }}
-          className="btn"
-          to={'.'}
-          onClick={(_) => {
-            setTreasureList([]);
-            setCurrWord('');
-            setLetters([]);
-          }}
-        >
-          New Game
-        </Link>
-        <Link
-          className="btn"
-          style={{
-            paddingLeft: '1.5em',
-            paddingRight: '1.5em',
-            marginBottom: '1rem',
-          }}
-          target="_blank"
-          to={{
-            pathname: '.',
-            search: qs.stringify({
-              letters: letters.join(''),
-              targetScore: score,
-            }),
-          }}
-        >
-          Challenge
-        </Link>
       </div>
     </div>
   );
