@@ -25,3 +25,4 @@ Try to construct as many words as you can from a set of 16 letters.
 - [ ] have a copy url button for the challenge link instead of opening it in a
       new tab
 - [ ] allow to choose how many letters are pulled in increments of 5 -> 15, 20, 25
+- [ ] show word definitions on request (https://dictionaryapi.dev/)
