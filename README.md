@@ -17,6 +17,11 @@ Try to construct as many words as you can from a set of 16 letters.
 - [x] make enter button work
 - [x] make letter clickable for mobile
 - [x] styling
-- [ ] sending a challenge
+- [x] sending a challenge
 - [x] visual feedback for miss spelled words
-- [ ] better scoring function
+- [x] better scoring function
+- [ ] have a copy url button for the challenge link instead of opening it in a
+      new tab
+- [ ] allow to choose how many letters are pulled in increments of 5 -> 15, 20, 25
+- [ ] limit height off treasure list and make the overflow scrollable
+- [ ] scroll to newly inserted words
