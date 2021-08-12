@@ -18,6 +18,7 @@ const WordSmith: FC<{
 }) => (
   <div className="WordSmith">
     <input
+      autoComplete="off"
       spellCheck="false"
       className={`WordSmith_input ${
         spellcheck(currentWord) && 'WordSmith_input_valid'
