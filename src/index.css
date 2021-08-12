@@ -47,6 +47,13 @@ button,
   text-decoration: none;
 }
 
+button:hover,
+.btn:hover,
+button:focus,
+.btn:focus {
+  background-color: var(--button-bg-active);
+}
+
 button:disabled,
 .btn:disabled {
   background-color: var(--button-bg-disabled);

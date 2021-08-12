@@ -26,6 +26,7 @@
   --page-font-color: var(--navy-blue);
   --button-border: var(--navy-blue);
   --button-bg: var(--sky-blue-crayola);
+  --button-bg-active: var(--cerulean-crayola);
   --button-bg-disabled: var(--sky-blue-crayola-2);
   --button-font-color: var(--dark-cornflower-blue);
   --button-font-color-disabled: var(--star-command-blue);
