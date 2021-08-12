@@ -2,13 +2,14 @@ import React, { FC, useCallback } from 'react';
 import './WordTreasure.css';
 import { wordScore } from './game-rules';
 
+const isLatest = (words: string[], index: number) => index === words.length - 1;
+
 const getClasses = (words: string[], index: number, sortedIndex: number) => {
-  const isLatest = (index: number) => index === words.length - 1;
   let classes = ['WordTreasure_word_item'];
-  if (isLatest(index)) {
+  if (isLatest(words, index)) {
     classes.push('WordTreasure_word--newest');
   }
-  if (isLatest(index) && sortedIndex === 0) {
+  if (isLatest(words, index) && sortedIndex === 0) {
     classes.push('WordTreasure_word--new-highscore');
   }
   return classes.join(' ');
@@ -21,11 +22,13 @@ const Item: FC<{
   word: string;
 }> = ({ words, index, sortedIndex, word }) => {
   const scrollingRef = useCallback(
-    (el) =>
+    (el) => {
       el &&
-      el.scrollIntoView({
-        behavior: 'smooth',
-      }),
+        el.classList.contains('WordTreasure_word--newest') &&
+        el.scrollIntoView({
+          behavior: 'smooth',
+        });
+    },
     [] // only once
   );
   return (
