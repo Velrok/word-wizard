@@ -1,39 +1,50 @@
 .App {
   margin: 1rem;
   display: grid;
-  grid-template-columns: 100%;
+  grid-gap: 1rem;
 }
 
+/*SMALL screen*/
 @media only screen and (max-width: 700px) {
   .App {
-    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'header'
+      'description'
+      'left'
+      'right';
   }
 }
 
+/*LARGE screen*/
 @media only screen and (min-width: 700px) {
   .App {
+    height: calc(100vh - 2rem);
     grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
       'header header'
       'description description'
       'left right';
-    grid-gap: 1rem;
   }
+}
 
-  .App-header {
-    grid-area: header;
-  }
+.App-header {
+  grid-area: header;
+}
 
-  .App_description {
-    grid-area: description;
-  }
-  .inputs {
-    grid-area: left;
-  }
-  .outputs {
-    grid-area: right;
-    padding-left: 2rem;
-  }
+.App_description {
+  grid-area: description;
+}
+
+.inputs {
+  grid-area: left;
+}
+
+.outputs {
+  grid-area: right;
+  padding-left: 2rem;
+  overflow: scroll;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
