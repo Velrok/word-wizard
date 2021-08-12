@@ -20,8 +20,8 @@ Try to construct as many words as you can from a set of 16 letters.
 - [x] sending a challenge
 - [x] visual feedback for miss spelled words
 - [x] better scoring function
+- [x] limit height off treasure list and make the overflow scrollable
+- [x] scroll to newly inserted words
 - [ ] have a copy url button for the challenge link instead of opening it in a
       new tab
 - [ ] allow to choose how many letters are pulled in increments of 5 -> 15, 20, 25
-- [ ] limit height off treasure list and make the overflow scrollable
-- [ ] scroll to newly inserted words
