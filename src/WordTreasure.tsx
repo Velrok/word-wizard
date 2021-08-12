@@ -14,6 +14,20 @@ const getClasses = (words: string[], index: number, sortedIndex: number) => {
   return classes.join(' ');
 };
 
+const Item: FC<{
+  words: string[];
+  index: number;
+  sortedIndex: number;
+  word: string;
+}> = ({ words, index, sortedIndex, word }) => {
+  return (
+    <li key={word} className={getClasses(words, index, sortedIndex)}>
+      <span className="WordTreasure_word">{word} </span>
+      <span className="WordTreasure_word_score">{wordScore(word)}</span>
+    </li>
+  );
+};
+
 const WordTreasure: FC<{ words: string[] }> = ({ words }) => {
   const indexed_words: Array<[string, number]> = words.map((item, index) => [
     item,
@@ -26,10 +40,12 @@ const WordTreasure: FC<{ words: string[] }> = ({ words }) => {
         {indexed_words
           .sort(([a, _aa], [b, _bb]) => wordScore(b) - wordScore(a))
           .map(([w, index], sortedIndex) => (
-            <li key={w} className={getClasses(words, index, sortedIndex)}>
-              <span className="WordTreasure_word">{w} </span>
-              <span className="WordTreasure_word_score">{wordScore(w)}</span>
-            </li>
+            <Item
+              words={words}
+              index={index}
+              sortedIndex={sortedIndex}
+              word={w}
+            />
           ))}
       </ol>
     </div>
