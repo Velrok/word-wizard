@@ -32,11 +32,7 @@ const Item: FC<{
     [] // only once
   );
   return (
-    <li
-      ref={scrollingRef}
-      key={word}
-      className={getClasses(words, index, sortedIndex)}
-    >
+    <li key={word} className={getClasses(words, index, sortedIndex)}>
       <span className="WordTreasure_word">{word} </span>
       <span className="WordTreasure_word_score">{wordScore(word)}</span>
     </li>
