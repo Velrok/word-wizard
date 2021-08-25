@@ -7,8 +7,6 @@ Try to construct as many words as you can from a set of 16 letters.
 
 <img width="625" alt="Screenshot 2021-08-10 at 00 21 54" src="https://user-images.githubusercontent.com/34974/128786305-b6c223e5-7d25-4744-9aec-cd903e85de40.png">
 
-
-
 # ToDo
 
 - [x] display word scores
@@ -26,3 +24,13 @@ Try to construct as many words as you can from a set of 16 letters.
       new tab
 - [ ] allow to choose how many letters are pulled in increments of 5 -> 15, 20, 25
 - [ ] show word definitions on request (https://dictionaryapi.dev/)
+
+# Dev setup
+
+`npm run start`
+will start a local dev server
+
+`npm run build`
+will build for production
+
+Deployments are done via GitHub actions on push to main.
